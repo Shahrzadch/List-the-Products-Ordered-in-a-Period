@@ -1,0 +1,7 @@
+# Write the MySQL query statement below
+Select product_name, SUM(unit) AS unit
+From Products p
+Left Join Orders o ON p.product_id =  o.product_id  
+Where o.order_date BETWEEN '2020-02-01' AND '2020-02-29'
+Group By product_name
+HAVING unit >= 100;
